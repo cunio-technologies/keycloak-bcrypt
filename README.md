@@ -6,6 +6,7 @@ Add a password hash provider to handle BCrypt passwords inside Keycloak.
 ```
 mvn clean package
 ```
+Or just get jar built by Travis from the Github Releases page.
 
 ## Install
 ```
