@@ -22,3 +22,7 @@ You need to restart Keycloak.
 ## Use
 
 Set a number of hash iterations (4-30) and bcrypt as an algorithm in a password policy in Keycloak and that's it.
+If you don't wand to use the GUI:
+```
+kcadm.sh  update realms/master -s 'passwordPolicy="hashIterations(10) and hashAlgorithm(bcrypt)"'
+```
