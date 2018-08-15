@@ -1,14 +1,11 @@
 package com.github.leroyguillaume.keycloak.bcrypt;
 
 import org.jboss.logging.Logger;
-import org.keycloak.common.util.Base64;
 import org.keycloak.credential.CredentialModel;
 import org.keycloak.credential.hash.PasswordHashProvider;
 import org.keycloak.models.PasswordPolicy;
 import org.keycloak.models.UserCredentialModel;
 import org.mindrot.jbcrypt.BCrypt;
-
-import java.io.IOException;
 
 /**
  * @author <a href="mailto:pro.guillaume.leroy@gmail.com">Guillaume Leroy</a>
@@ -51,11 +48,7 @@ public class BCryptPasswordHashProvider implements PasswordHashProvider {
         credential.setType(UserCredentialModel.PASSWORD);
         credential.setHashIterations(iterations);
         credential.setValue(password);
-        try {
-            credential.setSalt(Base64.decode(salt));
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        credential.setSalt(salt.getBytes());
     }
 
     @Override
