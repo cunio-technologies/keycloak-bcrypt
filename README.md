@@ -10,7 +10,7 @@ Or just get jar built by Travis from the Github Releases page.
 
 ## Install
 ```
-wget https://repo1.maven.org/maven2/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar
+curl http://central.maven.org/maven2/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar > jbcrypt-0.4.jar
 KEYCLOAK_HOME/bin/jboss-cli.sh \
     --command="module add \
         --name=org.mindrot.jbcrypt \
