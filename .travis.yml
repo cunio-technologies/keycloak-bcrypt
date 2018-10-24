@@ -1,0 +1,16 @@
+language: java
+jdk: oraclejdk8
+cache:
+  directories:
+    - "$HOME/.m2/repository"
+deploy:
+  provider: releases
+  api_key:
+    secure: OnpqJfsiG+zs3lgiD2oL9nDFuoEz9Il/Dbu7fMMGyZ8elVAZByt7bnfLLvEUJw/vq9Yg/DlyiMPVWU5OWYqeJjjpRzyCf7Q/Zgepm/HkTQQqQ2sM1vP2PSpOQDcUEhTCofmaJve5gQTnQz3dEEm4cRjoaEZF1ZIH0foHHyN5XZG20KlnQwNorfzkjmb8zr/rUrZ2uTpiPfp89vCq40iCQcX0ncr9/9z3wYpkEN5uxi+25gIYYYuVAddkdncFlUBDuGgYN+DI5kXg5F0rtRGJfXpmcAHxSol1lIt7CcT9jAfg7gLzp7P6KiFNE2tLCqt6TJb+rE57K8kRnjPiMaRlOIhq5hz1VygobToEfVp8Jk9euR5WJOlCGPdB69VB/9Fvn7vfQGrAgUdFpEpL9JziouzuitZ72yBpyZCYlL0Bsfc0nlfmGsVwqW9Wc14xAxujH2YgNTUN/7YerBfQJEswUDbep88RyxD8XLqOQhbPofnHv/5/DQUrWPNYz2cEb08UuGMmfdcnJO6qyWX4tLxvUkRFFIdNsiZ8o0jIYw92KWYGybquhMSOmjppH8zlFtd44gom0jTUk7U9JMOZlJo40Dvz40HzE94A0nsbCCCT/qnusI9CaA3Dksv1ffEkFbOuRT/v0xYE7p67dC1X6DkixGEA5myUeYUMgunx8xxNHAQ=
+  skip_cleanup: true
+  file_glob: true
+  file: target/*.jar
+  on:
+    repo: teithon/keycloak-bcrypt
+    branch: master
+    tags: false
